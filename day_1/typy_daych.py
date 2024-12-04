@@ -133,3 +133,36 @@ print(imie)  # Radek Radek
 print(imie.upper())  # RADEK RADEK
 tekst_upper = imie.upper()
 print(tekst_upper)
+# Radek Radek
+# RADEK RADEK
+# RADEK RADEK
+
+liczba = 890765456123
+print(liczba)  # 890765456123
+print(f"Nasza duza liczba {liczba:,}")  # Nasza duza liczba 890,765,456,123
+print(f"Nasza duza liczba {liczba:_}")  # Nasza duza liczba 890_765_456_123
+print(f"Nasza duza liczba {liczba:_}".replace("_", " "))  # Nasza duza liczba 890 765 456 123
+print(f"Nasza duza liczba {liczba:_}".replace("_", "."))  # Nasza duza liczba 890.765.456.123
+
+liczba2 = 1500000000
+liczba2 = 1_500_000_000
+print(type(liczba2))  # <class 'int'>
+print(liczba2)  # 1500000000
+
+# typ logiczny
+# prawdda, fałsz
+# True False
+
+print(int(True))  # 1
+print(int(False))  # 0
+
+# bool() - rzutowanie, zamiana na typ logiczny
+print(bool(1))  # True
+print(bool(0))  # False
+
+print(bool(100))  # True
+print(bool(-10))  # True
+print(bool("radek"))  # True
+
+print(bool(""))  # False
+print(bool(None))  # False, None - odpowiednik null
