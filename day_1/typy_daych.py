@@ -166,3 +166,31 @@ print(bool("radek"))  # True
 
 print(bool(""))  # False
 print(bool(None))  # False, None - odpowiednik null
+
+tekst = "    Tekst   "
+# usunięcie białych znaków, usunie z przodu i z tyłu
+print(tekst.strip())  # "Tekst"
+print(tekst.rstrip())  # "    Tekst"
+print(tekst.lstrip())  # "Tekst   "
+
+a = 10
+print(f'Zmienna a = {a}')  # Zmienna a = 10
+print(f'Zmienna {a = }')  # Zmienna a = 10
+
+text_x = "Witaj Świecie"
+print(text_x.capitalize())  # Witaj świecie
+print(text_x.casefold())  # witaj świecie
+
+name1 = "GROSS"
+name2 = "groẞ"
+print(name1.lower() == name2.lower())  # == porównanie, False
+print(name1.casefold() == name2.casefold())  # == porównanie, True
+""" Return a version of the string suitable for caseless comparisons. """
+print("\u00Df")  # ß
+
+encode_s = text_x.encode('utf-8')
+print(encode_s)  # b'Witaj \xc5\x9awiecie', typ bajtowy
+# b - typ bajtowy
+# \xc5\x9a wartość szesnastkowa kodu znaku Ś
+
+print(encode_s.decode('utf-8'))  # Witaj Świecie
