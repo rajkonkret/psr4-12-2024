@@ -34,3 +34,39 @@ print(lista2)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 55, 55, 55]
 while 55 in lista2:
     lista2.remove(55)
 print(lista2)  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# warunki
+logiczna = True
+logiczna = ""
+if logiczna:
+    print("Prawda")
+    print("Prawda")
+    print("Prawda")
+    print("Prawda")
+else:
+    print("Fałsz")
+
+odp = "Raadek"
+if odp == "Radek":
+    print("Radek")
+elif odp == "Tomek":
+    print("Tomek")
+else:
+    print("Nie znam Cię")
+# Nie znam Cię
+
+# od pythona 3.10
+# match case
+
+odp = input("Podaj imię")  # odczytuje dane, str
+
+match odp.casefold().capitalize().strip():
+    case "Radek":
+        print("Ok")
+    case "Tomek":
+        print("Ok")
+    case _:  # odpowiednik else
+        print("Nie znam")
+
+# Podaj imięradek
+# Ok
