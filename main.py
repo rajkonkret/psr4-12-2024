@@ -17,4 +17,9 @@ if __name__ == '__main__':
 # 2 x shift - podręczna wyszukiwarka
 # wheel - kólko  myszy zmienia wielkosc fontu
 # theme - kolorki
-#
+# ctrl shift f10 - uruchamianie
+
+# (.venv) PS C:\Users\CSComarch\PycharmProjects\psr4-12-2024> python main.py
+# Hi, PyCharm
+# PEP8
+# ctrl alt l - formatowanie kodu wg zasad PEP8
