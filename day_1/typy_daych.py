@@ -100,12 +100,36 @@ print("Zaokrąglone", wersja_zaokrąglona)  # Zaokrąglone 4
 
 liczba = 3.8676
 print(round(liczba, 2))  # 3.87
-print(f"{wersja:^25}")# "         3.90001         "
-print(f"{wersja:<25}")# "3.90001                  "
-print(f"{wersja:>25}")# "                  3.90001"
-print(f"{wersja:.>25}")# "..................3.90001"
+print(f"{wersja:^25}")  # "         3.90001         "
+print(f"{wersja:<25}")  # "3.90001                  "
+print(f"{wersja:>25}")  # "                  3.90001"
+print(f"{wersja:.>25}")  # "..................3.90001"
 
 # ten sposób weryfikuje typr
-print("Uzywamy %f" % wersja) # Uzywamy 3.900010
-print("Uzywamy %s" % wersja) # Uzywamy 3.900010
+print("Uzywamy %f" % wersja)  # Uzywamy 3.900010
+print("Uzywamy %s" % wersja)  # Uzywamy 3.900010
+print("Uzywamy %G" % wersja)  # Uzywamy 3.90001
+print("Uzywamy %G" % 3.98000)  # Uzywamy 3.98
+print("Uzywamy %f" % 3.98000)  # Uzywamy 3.980000
 # print("Uzywamy %d" % "Radek") # TypeError: %d format: a real number is required, not str
+
+print("uzywamy wersji {}".format(wersja))  # uzywamy wersji 3.90001
+
+print(f"""Tekst
+wielolinijkowy
+    {wersja}""")
+# "Tekst
+# wielolinijkowy
+#     3.90001"
+
+"""Komentarz
+    wielolinijkowy"""
+
+# teksty są niemutowalne
+imie = "Radek Radek"
+imie.upper()
+""" Return a copy of the string converted to uppercase. """
+print(imie)  # Radek Radek
+print(imie.upper())  # RADEK RADEK
+tekst_upper = imie.upper()
+print(tekst_upper)
