@@ -126,3 +126,12 @@ print(r0)
 print(r1)
 # {'miasto': 'Kielce', 'ZIP': '00-000'}
 # {'miasto': 'Kielce', 'ZIP': '25-900'}
+
+lata = [(2000, 29.7), (2001, 33.12), (2010, 32.92)]
+print(max(lata))  # (2010, 32.92)
+print(min(lata))  # (2000, 29.7)
+# (20000, 29.7) indeks 0, 1
+print(max(lata, key=lambda c: c[1]))  # (2001, 33.12)
+print(max(map(lambda c: (c[1], c), lata)))  # (33.12, (2001, 33.12))
+print(max(map(lambda c: c[1], lata)))  # 33.12
+print(max(map(lambda c: (c[1], c[0]), lata)))  # (33.12, 2001)
