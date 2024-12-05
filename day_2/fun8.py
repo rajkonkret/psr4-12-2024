@@ -55,12 +55,13 @@ def add_np():
     res = array1 + array2
     return "OK Np"
 
+
 @measure_time
 def add_zip():
     res = [a + b for a, b in zip(list1, list2)]
     return "OK zip"
 
-5
+
 print("Start")
 print(add_without_np())
 print(add_np())
