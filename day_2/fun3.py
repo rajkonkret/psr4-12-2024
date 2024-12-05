@@ -2,7 +2,7 @@
 # podstawowym zastosowaniem lambdy jest funkcja anonimowa
 # mozłiwość uzycia w miejscu deklaracji
 # lambda ma return
-from functools import reduce
+from functools import reduce, lru_cache
 
 
 def liczymy(x, y):
@@ -85,3 +85,44 @@ print("Wynik reduce", wynik)  # Wynik reduce 15, ((((1 + 2) + 3) + 4) + 5).
 
 wynik_mn = reduce(lambda a, b: a * b, liczby)
 print("Wynik reduce, mnozenie", wynik_mn)  # Wynik reduce, mnozenie 120, ((((1 * 2) * 3) * 4) * 5)
+
+
+@lru_cache(maxsize=1000)
+def fib_cached(n):
+    if n < 2:
+        return n
+    return fib_cached(n - 1) + fib_cached(n - 2)
+
+
+print(fib_cached(10))  # 55
+print(fib_cached.cache_info())
+# CacheInfo(hits=8, misses=11, maxsize=1000, currsize=11)
+print(fib_cached(5))
+print(fib_cached.cache_info())  # CacheInfo(hits=9, misses=11, maxsize=1000, currsize=11)
+# hits - ile razy uzyskał wynik nie musząc wykonać obliczeń
+# misses - ile razy wykonał obliczenia
+fib_cached.cache_clear()
+print(fib_cached.cache_info())  # CacheInfo(hits=0, misses=0, maxsize=1000, currsize=0)
+
+r0 = {'miasto': "Kielce"}
+r1 = {'miasto': "Kielce", "ZIP": "25-900"}
+
+print(r0['miasto'])
+print(r1['miasto'])
+# Kielce
+# Kielce
+
+print(r1["ZIP"])  # 25-900
+# print(r0["ZIP"])  # KeyError: 'ZIP'
+
+print(r0.get("ZIP", "00-000"))  # 00-000
+
+d_zip = lambda row: row.setdefault("ZIP", "00-000")
+print(d_zip(r0))
+print(d_zip(r1))
+# 00-000
+# 25-900
+print(r0)
+print(r1)
+# {'miasto': 'Kielce', 'ZIP': '00-000'}
+# {'miasto': 'Kielce', 'ZIP': '25-900'}
