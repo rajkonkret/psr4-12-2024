@@ -119,3 +119,6 @@ spam %= 1    spam = spam % 1
 
 pip freeze > requirements.txt
 pip install -r .\requirements.txt
+
+pip install pyinstaller
+pyinstaller.exe --onefile --noconsole '.\day_3\wykres.py'
