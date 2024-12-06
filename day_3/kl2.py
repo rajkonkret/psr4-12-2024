@@ -50,4 +50,4 @@ print(s2.all_contacts)
 # Marek marek@o2.pl +48000000000,
 # Zenek zenek@wp.pl +48567890123]
 s3 = Suplier("Marta", "marta@wp,pl", "321456789")
-s3.order("kawa")
+s3.order("kawa")  # kawa zamówienie od Marta
